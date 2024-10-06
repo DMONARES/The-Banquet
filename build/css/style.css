@@ -646,4 +646,45 @@ a {
   flex-direction: column;
   row-gap: 30px;
   align-items: start;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+  background-image: url(./../../../build/img/reviews-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.reviews__title {
+  padding-top: 120px;
+}
+.reviews__content {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  align-items: center;
+  padding-bottom: 120px;
+}
+.reviews__person {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+}
+.reviews__name {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 120%;
+}
+.reviews__rang {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 221%;
 }/*# sourceMappingURL=style.css.map */
