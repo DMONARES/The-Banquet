@@ -343,6 +343,7 @@ h6,
 :root {
   --color-warning: #FFE68E;
   --color-gray: #F2F2F2;
+  --color-gray-alt: #2B2B2B;
   --color-pink: #EBE0E0;
   --color-dark: #303548;
   --color-primary: #252525;
@@ -547,6 +548,7 @@ a {
   display: flex;
   flex-direction: column;
   padding-bottom: 136px;
+  margin-bottom: 30px;
   row-gap: 40px;
   align-items: center;
   background-image: url(./../../../build/img/hero-bg.jpg);
@@ -565,4 +567,50 @@ a {
 }
 .hero__text:nth-child(2) {
   font-weight: 400;
+}
+
+.history {
+  --historyFontSize: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+  grid-template-areas: "image-1 person image-3" "image-2 person image-3";
+}
+.history__biography, .history__image {
+  border-radius: var(--border-radius-large);
+}
+.history__block-1 {
+  grid-area: image-1;
+}
+.history__block-2 {
+  grid-area: image-2;
+}
+.history__biography {
+  grid-area: person;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  background-color: var(--color-gray-alt);
+}
+.history__person {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.history__text {
+  font-size: var(--historyFontSize);
+}
+.history__name {
+  --historyFontSize: 48px;
+  font-family: "Underland DEMO", sans-serif;
+  font-size: var(--historyFontSize);
+}
+.history__rang {
+  font-family: "Noto Serif Display", sans-serif;
+  font-size: var(--historyFontSize);
+}
+.history__block-3 {
+  grid-area: image-3;
 }/*# sourceMappingURL=style.css.map */

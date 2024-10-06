@@ -1,0 +1,70 @@
+.history
+{
+  --historyFontSize: 24px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+  grid-template-areas: 
+                      'image-1 person image-3'
+                      'image-2 person image-3';
+
+  &__biography,
+  &__image
+  {
+    border-radius: var(--border-radius-large);
+  }
+  
+  &__block-1
+  {
+    grid-area: image-1;
+  }
+
+  &__block-2
+  {
+    grid-area: image-2;
+  }
+
+  &__biography
+  {
+    grid-area: person;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    background-color: var(--color-gray-alt);
+  }
+
+  &__person
+  {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__text
+  {
+    font-size: var(--historyFontSize);
+  }
+
+  &__name
+  {
+    --historyFontSize: 48px;
+
+    font-family: "Underland DEMO", sans-serif;
+    font-size: var(--historyFontSize);
+  }
+
+  &__rang
+  {
+    font-family: "Noto Serif Display", sans-serif;
+    font-size: var(--historyFontSize);
+  }
+
+  &__block-3
+  {
+    grid-area: image-3;
+  }
+
+}
