@@ -1,0 +1,539 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+}
+
+/**
+  Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./../../src/assets/fonts/Inter/Inter-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./../../src/assets/fonts/Inter/Inter-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Italiana";
+  src: url("./../../src/assets/fonts/Italina/Italiana-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif Display";
+  src: url("./../../src/assets/fonts/NotoSerif/NotoSerif.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./../../src/assets/fonts/Roboto/Roboto-Black.woff") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./../../src/assets/fonts/Roboto/Roboto-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./../../src/assets/fonts/Roboto/Roboto-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./../../src/assets/fonts/Roboto/Roboto-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spelling Night Update 2";
+  src: url("./../../src/assets/fonts/SpellingNight/SpellingNight-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Underland DEMO";
+  src: url("./../../src/assets/fonts/Underland/UnderlandDEMO-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 0%;
+}
+
+h1,
+.h1 {
+  color: var(--color-light);
+  font-family: "Noto Serif Display", sans-serif;
+  font-size: 148px;
+  font-weight: 300;
+  line-height: 100%;
+  letter-spacing: -10%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2,
+.h2 {
+  font-size: 60px;
+  line-height: 120%;
+}
+
+h3,
+.h3 {
+  font-size: 48px;
+  line-height: 160%;
+}
+
+h4,
+.h4 {
+  font-size: 36px;
+  line-height: 160%;
+}
+
+h5,
+.h5 {
+  font-size: 32px;
+  line-height: 120%;
+}
+
+h6,
+.h6 {
+  font-size: 24px;
+  line-height: 160%;
+}
+
+.text-nav-link {
+  color: var(--color-nav-link-default);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 10%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.text-link {
+  color: var(--color-light);
+  font-family: "Roboto", sans-serif;
+  font-size: 19px;
+  line-height: 180%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.g-text {
+  color: var(--color-light);
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.text-button {
+  color: var(--color-light);
+  font-family: "Italiana", sans-serif;
+  font-size: 19px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.input-button {
+  color: var(--color-light);
+  font-family: "Italiana", sans-serif;
+  font-size: 19px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.text-input {
+  color: var(--color-light);
+  font-family: "Italiana", sans-serif;
+  font-size: 19px;
+  line-height: 180%;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+:root {
+  --color-warning: #FFE68E;
+  --color-gray: #F2F2F2;
+  --color-pink: #EBE0E0;
+  --color-dark: #303548;
+  --color-primary: #252525;
+  --color-secondary: #E9E9E9;
+  --color-light: #FFFFFF;
+  --color-g-bg: #0E0E0E;
+  --color-nav-link-default: #cfcfcf;
+  --border: 1px solid var(--color-light);
+  --border-radius: 10px;
+  --border-radius-medium: 20px;
+  --border-radius-large: 30px;
+  --font-family-base: "Roboto", sans-serif;
+  --container-width: 1600px;
+  --container-padding-x: 0;
+  --section-padding-y: 30px;
+  --input-height: 48px;
+  --button-height: 70px;
+  --button-input-height: 62px;
+  --transition-duration: 0.4s;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  -webkit-clip-path: inset(100%) !important;
+          clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  line-height: 1.28;
+  color: var(--color-light);
+  background-color: var(--color-g-bg);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.g-button {
+  position: relative;
+  padding: 18px 152px;
+  height: var(--button-height);
+  letter-spacing: 0.05em;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  transition: all 0.3s;
+}
+.g-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.1, 0.1);
+  transition: transform 0.15s, 0.15s border-radius 0.15s;
+  transition: all 0.5s;
+  z-index: 1;
+}
+.g-button:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+  border-radius: 0;
+}
+.g-button:focus {
+  background-color: #181818;
+}
+
+.form-button {
+  position: relative;
+  padding: 14px 380px;
+  height: var(--button-input-height);
+  letter-spacing: 0.05em;
+  color: var(--color-light);
+  background-color: var(--color-primary);
+  border: none;
+  transition: all 0.3s;
+}
+.form-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.1, 0.1);
+  transition: transform 0.15s, 0.15s border-radius 0.15s;
+  transition: all 0.5s;
+  z-index: 1;
+}
+.form-button:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+  border-radius: 0;
+}
+.form-button:focus {
+  background-color: #181818;
+}
+
+.g-input {
+  padding: 7px 0;
+  width: 100%;
+  height: var(--input-height);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border: none;
+  border-bottom: var(--border);
+  outline: none;
+}
+.g-input:hover {
+  color: var(--color-dark);
+  background-color: var(--color-secondary);
+}
+
+.header {
+  padding: 50px;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__list {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 65px;
+       column-gap: 65px;
+}
+.header__link {
+  position: relative;
+}
+.header__link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: var(--color-light);
+  bottom: -5px;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.header__link:hover {
+  color: var(--color-light);
+}
+.header__link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}/*# sourceMappingURL=style.css.map */

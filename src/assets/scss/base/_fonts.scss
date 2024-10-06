@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./../../src/assets/fonts/Inter/Inter-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./../../src/assets/fonts/Inter/Inter-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Italiana";
+  src: url("./../../src/assets/fonts/Italina/Italiana-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif Display";
+  src: url("./../../src/assets/fonts/NotoSerif/NotoSerif.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./../../src/assets/fonts/Roboto/Roboto-Black.woff") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./../../src/assets/fonts/Roboto/Roboto-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./../../src/assets/fonts/Roboto/Roboto-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./../../src/assets/fonts/Roboto/Roboto-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Spelling Night Update 2";
+  src: url("./../../src/assets/fonts/SpellingNight/SpellingNight-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Underland DEMO";
+  src: url("./../../src/assets/fonts/Underland/UnderlandDEMO-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h2, 
+h3, 
+h4, 
+h5, 
+h6
+{
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 0%;
+}
+
+h1,
+.h1
+{
+  color: var(--color-light);
+  font-family: "Noto Serif Display", sans-serif;
+  font-size: 148px;
+  font-weight: 300;
+  line-height: 100%;
+  letter-spacing: -10%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2,
+.h2
+{
+  font-size: 60px;
+  line-height: 120%;
+}
+
+h3,
+.h3
+{
+  font-size: 48px;
+  line-height: 160%;
+}
+
+h4,
+.h4
+{
+  font-size: 36px;
+  line-height: 160%;
+}
+
+h5,
+.h5
+{
+  font-size: 32px;
+  line-height: 120%;
+}
+
+h6,
+.h6
+{
+  font-size: 24px;
+  line-height: 160%;
+}
+
+.text-nav-link
+{
+  color: var(--color-nav-link-default);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 10%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.text-link 
+{
+  color: var(--color-light);
+  font-family: "Roboto", sans-serif;
+  font-size: 19px;
+  line-height: 180%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.g-text
+{
+  color: var(--color-light);
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.text-button
+{
+  color: var(--color-light);
+  font-family: "Italiana", sans-serif;
+  font-size: 19px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.input-button
+{
+  color: var(--color-light);
+  font-family: "Italiana", sans-serif;
+  font-size: 19px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.text-input
+{
+  color: var(--color-light);
+  font-family: "Italiana", sans-serif;
+  font-size: 19px;
+  line-height: 180%;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: capitalize;
+}

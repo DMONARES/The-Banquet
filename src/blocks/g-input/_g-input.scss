@@ -1,0 +1,17 @@
+.g-input
+{
+  padding: 7px 0;
+  width: 100%;
+  height: var(--input-height);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border: none;
+  border-bottom: var(--border);
+  outline: none;
+
+  &:hover
+  {
+    color: var(--color-dark);
+    background-color: var(--color-secondary);
+  }
+}
