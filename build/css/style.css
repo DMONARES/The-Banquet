@@ -242,9 +242,9 @@ h6 {
 h1,
 .h1 {
   color: var(--color-light);
-  font-family: "Noto Serif Display", sans-serif;
+  font-family: "Italiana", sans-serif;
   font-size: 148px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 100%;
   letter-spacing: -10%;
   text-align: center;
@@ -370,6 +370,10 @@ h6,
   padding-inline: var(--container-padding-x);
 }
 
+.section {
+  padding: var(--section-padding-y) 0;
+}
+
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -419,9 +423,10 @@ a {
 
 .g-button {
   position: relative;
-  padding: 18px 152px;
+  padding: 18px 160px;
   height: var(--button-height);
   letter-spacing: 0.05em;
+  color: var(--color-light);
   background-color: var(--color-primary);
   border: none;
   border-radius: var(--border-radius);
@@ -501,7 +506,7 @@ a {
 }
 
 .header {
-  padding: 50px;
+  padding: 55px;
 }
 .header__inner {
   display: flex;
@@ -536,4 +541,28 @@ a {
 .header__link:hover::before {
   transform-origin: left;
   transform: scaleX(1);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 136px;
+  row-gap: 40px;
+  align-items: center;
+  background-image: url(./../../../build/img/hero-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero__title {
+  margin-top: 250px;
+}
+.hero__text {
+  font-size: 20px;
+}
+.hero__text:nth-child(1) {
+  font-weight: 900;
+}
+.hero__text:nth-child(2) {
+  font-weight: 400;
 }/*# sourceMappingURL=style.css.map */

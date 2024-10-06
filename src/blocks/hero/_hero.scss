@@ -1,0 +1,33 @@
+.hero
+{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 136px;
+  row-gap: 40px;
+  align-items: center;
+  background-image: url(./../../../build/img/hero-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__title
+  {
+    margin-top: 250px;
+  }
+
+  &__text
+  {
+    font-size: 20px;
+
+    &:nth-child(1)
+    {
+      font-weight: 900;
+    }
+
+    &:nth-child(2)
+    {
+      font-weight: 400;
+    }
+
+  }
+}
