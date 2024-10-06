@@ -1,0 +1,16 @@
+.general
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+
+  &__content
+  {
+    padding-inline: 60px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: start;
+  }
+}
