@@ -493,11 +493,11 @@ a {
 }
 
 .g-input {
-  padding: 7px 0;
+  padding: 7px;
   width: 100%;
   height: var(--input-height);
   color: var(--color-light);
-  background-color: var(--color-dark);
+  background-color: transparent;
   border: none;
   border-bottom: var(--border);
   outline: none;
@@ -728,4 +728,23 @@ a {
 }
 .programme__link:hover::after, .programme__link:hover::before {
   width: 100%;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 60px;
+}
+.contact__form {
+  width: 100%;
+  max-width: 1000px;
+}
+.contact__input {
+  margin-bottom: 30px;
+}
+.contact__area {
+  height: 200px;
+  resize: none;
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */
